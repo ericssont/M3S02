@@ -26,14 +26,6 @@ public class VendaService {
     }
 
     public Venda realizarVenda(VendaRequest vendaRequest){
-        clienteService.buscaClientePorId(vendaRequest.getClienteId());
-
-        for(Long idProduto: vendaRequest.getProdutos()) {
-            produtoService.buscaProdutoPorId(idProduto);
-        }
-
-        vendaRepository.save(new Venda());
-
         // TODO: código a ser feito no método TDD
         return null;
     }
@@ -41,5 +33,6 @@ public class VendaService {
     public Venda buscaVendaPorId (Long id){
         return this.VendaRepository.findById(id).orElse(null);
     }
+
 
 }
